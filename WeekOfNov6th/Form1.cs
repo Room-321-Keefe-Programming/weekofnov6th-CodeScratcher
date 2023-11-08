@@ -22,6 +22,13 @@ namespace WeekOfNov6th
         {
             rtbOutput.Text = "";
             float toConvert1;
+
+            if (!float.TryParse(txtInput1.Text, out _) && !float.TryParse(txtInput2.Text, out _))
+            {
+                rtbOutput.Text = "Please enter a valid number";
+                return;
+            }
+
             if (float.TryParse(txtInput1.Text, out toConvert1))
             {
                 if (rdoTempConverter1.Checked)
@@ -50,6 +57,12 @@ namespace WeekOfNov6th
 
         private void btnMoney_Click(object sender, EventArgs e)
         {
+            if (!float.TryParse(txtInput1.Text, out _) && !float.TryParse(txtInput2.Text, out _))
+            {
+                rtbOutput.Text = "Please enter a valid number";
+                return;
+            }
+
             float[] coefficients = { 149.798f, 0.9314f, 0.8073f, 4.9056f };
 
             rtbOutput.Text = "";
@@ -76,6 +89,12 @@ namespace WeekOfNov6th
 
         private void btnDistance1_Click(object sender, EventArgs e)
         {
+            if (!float.TryParse(txtInput1.Text, out _) && !float.TryParse(txtInput2.Text, out _))
+            {
+                rtbOutput.Text = "Please enter a valid number";
+                return;
+            }
+
             rtbOutput.Text = "";
 
             List<(float, string)> coefficients = new List<(float, string)>();
@@ -105,6 +124,12 @@ namespace WeekOfNov6th
 
         private void btnDistance2_Click(object sender, EventArgs e)
         {
+            if (!float.TryParse(txtInput1.Text, out _) && !float.TryParse(txtInput2.Text, out _))
+            {
+                rtbOutput.Text = "Please enter a valid number";
+                return;
+            }
+
             rtbOutput.Text = "";
 
             List<(float, string)> coefficients = new List<(float, string)>();
@@ -131,6 +156,58 @@ namespace WeekOfNov6th
                     rtbOutput.Text += $"Input 2 converted {coefficient.Item2}: {Math.Round(toConvert2 * coefficient.Item1, 2)}\n";
                 }
             }
+        }
+
+        private void btnArrays_Click(object sender, EventArgs e)
+        {
+            rtbOutput.Text = "";
+            char[] alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToArray();
+
+            for (int i = 0; i < alphabet.Length; i++)
+            {
+                if ("AEIOU".Contains(alphabet[i]))
+                {
+                    rtbOutput.Text += alphabet[i];
+                }
+                else
+                {
+                    rtbOutput.Text += alphabet[i].ToString().ToLower();
+                }
+            }
+
+            rtbOutput.Text += "\n";
+
+            int j = alphabet.Length - 1;
+
+            bool uppercase = true;
+            int counter = 1;
+
+            while (j >= 0)
+            {
+                if (uppercase)
+                {
+                    rtbOutput.Text += alphabet[j];
+                }
+                else
+                {
+                    rtbOutput.Text += alphabet[j].ToString().ToLower();
+                }
+
+                if (counter == 5)
+                {
+                    uppercase = !uppercase;
+                    rtbOutput.Text += ",";
+                    counter = 1;
+                }
+                else
+                {
+                    counter++;
+                }
+
+
+
+                j--;
+            }   
         }
     }
 }

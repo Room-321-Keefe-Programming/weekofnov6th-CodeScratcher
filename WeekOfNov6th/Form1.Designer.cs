@@ -48,6 +48,7 @@
             this.chkInchToMeter = new System.Windows.Forms.CheckBox();
             this.chkKiloToMiles = new System.Windows.Forms.CheckBox();
             this.btnDistance2 = new System.Windows.Forms.Button();
+            this.btnArrays = new System.Windows.Forms.Button();
             this.grpTempConverter.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -269,11 +270,23 @@
             this.btnDistance2.UseVisualStyleBackColor = true;
             this.btnDistance2.Click += new System.EventHandler(this.btnDistance2_Click);
             // 
+            // btnArrays
+            // 
+            this.btnArrays.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnArrays.Location = new System.Drawing.Point(544, 409);
+            this.btnArrays.Name = "btnArrays";
+            this.btnArrays.Size = new System.Drawing.Size(75, 31);
+            this.btnArrays.TabIndex = 22;
+            this.btnArrays.Text = "Arrays";
+            this.btnArrays.UseVisualStyleBackColor = true;
+            this.btnArrays.Click += new System.EventHandler(this.btnArrays_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1061, 648);
+            this.Controls.Add(this.btnArrays);
             this.Controls.Add(this.btnDistance2);
             this.Controls.Add(this.chkKiloToMiles);
             this.Controls.Add(this.chkInchToMeter);
@@ -323,6 +336,7 @@
         private System.Windows.Forms.CheckBox chkInchToMeter;
         private System.Windows.Forms.CheckBox chkKiloToMiles;
         private System.Windows.Forms.Button btnDistance2;
+        private System.Windows.Forms.Button btnArrays;
     }
 }
 
